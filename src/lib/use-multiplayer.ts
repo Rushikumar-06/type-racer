@@ -34,7 +34,7 @@ export function useMultiplayer() {
     });
   }, [update]);
   useEffect(() => {
-    const client = io({ transports: ['websocket', 'polling'], autoConnect: true }); socket.current = client;
+    const client = io(process.env.NEXT_PUBLIC_SOCKET_URL || undefined, { transports: ['websocket', 'polling'], autoConnect: true }); socket.current = client;
     client.on('connect', () => {
       setConnected(true); setError('');
       const token = sessionStorage.getItem('typeracer-room-token');

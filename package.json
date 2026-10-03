@@ -6,6 +6,7 @@
     "dev": "node --import tsx server.ts",
     "build": "next build",
     "start": "NODE_ENV=production node --import tsx server.ts",
+    "start:multiplayer": "node --import tsx multiplayer-server.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts"
   },
